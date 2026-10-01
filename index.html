@@ -1,822 +1,1258 @@
-<!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#8e176f">
-  <meta name="description" content="Book beautiful braids, nails, frontal installations and more with Hair by Esther in Ijebu, Ogun State.">
-  <title>Hair by Esther | Beauty, Braids & Nails</title>
+  <title>HairbyEsther | Premium Hair Styling, Nails & Beauty Academy</title>
+  <meta name="description" content="HairbyEsther - Offering the best beauty services in Ijebu-Ode, Ogun State. Frontal Installation, Nails, Braids, Wig Revamping, Wig Making, Hair Accessories & Professional Training.">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#fdf2f8',
+              100: '#fce7f3',
+              200: '#fbcfe8',
+              500: '#ec4899',
+              600: '#db2777',
+              700: '#be185d',
+              800: '#831843',
+              900: '#64103c',
+              dark: '#4c0530',
+              plum: '#6b114d',
+              deep: '#500938'
+            }
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            sans: ['"Poppins"', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts & Font Awesome -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,600&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
   <style>
-    :root {
-      --plum: #83166e;
-      --plum-dark: #4c0d49;
-      --pink: #ed2387;
-      --pink-light: #fff0f8;
-      --coral: #ff6884;
-      --gold: #ffe04a;
-      --ink: #25152c;
-      --muted: #716373;
-      --white: #fff;
-      --shadow: 0 18px 55px rgba(83, 14, 71, .15);
-      --radius: 24px;
-    }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
     body {
-      margin: 0;
-      color: var(--ink);
-      background: #fffafd;
-      font-family: "DM Sans", sans-serif;
-      line-height: 1.55;
+      font-family: 'Poppins', sans-serif;
     }
-    a { color: inherit; text-decoration: none; }
-    button, input, select, textarea { font: inherit; }
-    button, a { -webkit-tap-highlight-color: transparent; }
-    .container { width: min(1160px, calc(100% - 40px)); margin-inline: auto; }
-
-    .topline {
-      color: white;
-      background: linear-gradient(90deg, #731268, #cf167c, #f15a84);
-      text-align: center;
-      padding: 8px 16px;
-      font-size: .84rem;
-      font-weight: 700;
-      letter-spacing: .025em;
+    .font-serif-title {
+      font-family: 'Playfair Display', serif;
     }
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      background: rgba(255, 250, 253, .94);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid rgba(131, 22, 110, .09);
+    .sunburst-bg {
+      background: radial-gradient(circle at 20% 20%, #fdf2f8 0%, #fce7f3 40%, #fbcfe8 100%);
     }
-    .nav-wrap {
-      min-height: 78px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
+    .glass-nav {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
     }
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      font-family: "Playfair Display", serif;
-      font-size: 1.55rem;
-      font-weight: 800;
-      white-space: nowrap;
+    .card-shadow {
+      box-shadow: 0 10px 30px -5px rgba(107, 17, 77, 0.12);
     }
-    .brand-mark {
-      display: grid;
-      place-items: center;
-      width: 42px;
-      height: 42px;
-      color: white;
-      border-radius: 15px 15px 15px 5px;
-      background: linear-gradient(145deg, var(--pink), var(--plum));
-      font-family: "DM Sans", sans-serif;
-      font-size: 1.15rem;
-      font-weight: 800;
-      box-shadow: 0 7px 18px rgba(237, 35, 135, .25);
+    .pulse-ring {
+      box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+      animation: pulse-green 2s infinite;
     }
-    .brand span span { color: var(--pink); }
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 30px;
-      color: #523e54;
-      font-size: .93rem;
-      font-weight: 700;
-    }
-    .nav-links a:not(.button):hover { color: var(--pink); }
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 9px;
-      padding: 13px 21px;
-      border: 0;
-      border-radius: 999px;
-      color: #fff;
-      background: linear-gradient(110deg, var(--pink), #a20c83);
-      font-weight: 800;
-      cursor: pointer;
-      box-shadow: 0 9px 22px rgba(190, 19, 123, .22);
-      transition: transform .2s, box-shadow .2s, filter .2s;
-    }
-    .button:hover { transform: translateY(-2px); box-shadow: 0 13px 28px rgba(190, 19, 123, .3); filter: saturate(1.1); }
-    .button:active { transform: translateY(0); }
-    .button.dark { background: var(--plum-dark); box-shadow: 0 8px 20px rgba(76,13,73,.2); }
-    .button.outline {
-      background: transparent;
-      color: var(--plum);
-      border: 1.5px solid rgba(131,22,110,.25);
-      box-shadow: none;
-    }
-    .button.outline:hover { background: var(--pink-light); }
-    .menu-toggle {
-      display: none;
-      width: 46px;
-      height: 46px;
-      border: 1px solid #f0d8e9;
-      color: var(--plum);
-      background: #fff;
-      border-radius: 14px;
-      font-size: 1.4rem;
-      cursor: pointer;
-    }
-
-    .hero {
-      position: relative;
-      overflow: hidden;
-      padding: 70px 0 76px;
-      background:
-        radial-gradient(circle at 86% 13%, rgba(255, 206, 229, .86), transparent 28%),
-        radial-gradient(circle at 7% 77%, rgba(255, 221, 98, .18), transparent 28%),
-        linear-gradient(125deg, #fff3fa 0%, #fffafd 48%, #fbe7f4 100%);
-    }
-    .hero::before, .hero::after {
-      content: "";
-      position: absolute;
-      border-radius: 50%;
-      pointer-events: none;
-    }
-    .hero::before {
-      width: 410px; height: 410px;
-      right: -190px; top: 100px;
-      border: 1px solid rgba(217, 48, 139, .14);
-      box-shadow: 0 0 0 32px rgba(217,48,139,.025), 0 0 0 70px rgba(217,48,139,.025);
-    }
-    .hero-grid {
-      position: relative;
-      z-index: 1;
-      display: grid;
-      grid-template-columns: 1.04fr .96fr;
-      align-items: center;
-      gap: 48px;
-    }
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 13px;
-      color: var(--plum);
-      background: #fff;
-      border: 1px solid #f6d1e8;
-      border-radius: 999px;
-      font-size: .78rem;
-      font-weight: 800;
-      letter-spacing: .06em;
-      text-transform: uppercase;
-    }
-    .eyebrow .spark { color: #efb900; font-size: 1rem; }
-    h1, h2, h3, p { margin-top: 0; }
-    h1 {
-      max-width: 650px;
-      margin: 18px 0 18px;
-      font-family: "Playfair Display", serif;
-      font-size: clamp(3.1rem, 6vw, 5.6rem);
-      line-height: .99;
-      letter-spacing: -.045em;
-    }
-    h1 .gradient-text {
-      color: var(--pink);
-      background: linear-gradient(100deg, #ec2387, #8e176f);
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .hero-copy {
-      max-width: 560px;
-      margin-bottom: 27px;
-      color: #6d5b6e;
-      font-size: 1.08rem;
-    }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
-    .hero-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      margin-top: 30px;
-      color: #614f64;
-      font-size: .88rem;
-      font-weight: 700;
-    }
-    .hero-meta span { display: inline-flex; align-items: center; gap: 7px; }
-    .hero-meta b { color: var(--pink); }
-
-    .poster-wrap {
-      position: relative;
-      max-width: 470px;
-      justify-self: end;
-      width: 100%;
-      padding: 13px;
-      border-radius: 30px;
-      background: linear-gradient(145deg, #8e176f, #ed2387 58%, #ff758e);
-      box-shadow: 0 25px 65px rgba(110, 20, 91, .27);
-      transform: rotate(1.4deg);
-    }
-    .poster-wrap img {
-      display: block;
-      width: 100%;
-      max-height: 635px;
-      object-fit: contain;
-      border: 7px solid white;
-      border-radius: 18px;
-      background: #f9d5e9;
-    }
-    .poster-tag {
-      position: absolute;
-      left: -36px;
-      bottom: 40px;
-      display: flex;
-      align-items: center;
-      gap: 11px;
-      padding: 13px 17px;
-      color: var(--ink);
-      background: white;
-      border-radius: 16px;
-      box-shadow: var(--shadow);
-      transform: rotate(-2deg);
-      font-size: .84rem;
-      font-weight: 800;
-    }
-    .poster-tag .tag-icon {
-      display: grid; place-items: center;
-      width: 37px; height: 37px;
-      color: white; background: var(--pink);
-      border-radius: 50%;
-    }
-
-    .trust-strip { background: var(--plum-dark); color: white; }
-    .trust-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 18px;
-      padding: 18px 0;
-    }
-    .trust-inner p { margin: 0; opacity: .9; font-size: .9rem; }
-    .trust-items { display: flex; gap: 26px; font-size: .88rem; font-weight: 700; }
-    .trust-items span { display: inline-flex; align-items: center; gap: 7px; }
-    .trust-items i { color: var(--gold); font-style: normal; }
-
-    section.content-section { padding: 88px 0; }
-    .section-heading { max-width: 690px; margin: 0 auto 42px; text-align: center; }
-    .section-heading .eyebrow { margin-bottom: 13px; }
-    h2 {
-      margin-bottom: 12px;
-      font-family: "Playfair Display", serif;
-      font-size: clamp(2.2rem, 4vw, 3.5rem);
-      line-height: 1.08;
-      letter-spacing: -.035em;
-    }
-    .section-heading p { color: var(--muted); margin-bottom: 0; }
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 17px;
-    }
-    .service-card {
-      position: relative;
-      overflow: hidden;
-      min-height: 208px;
-      padding: 24px 21px;
-      background: white;
-      border: 1px solid #f2deeb;
-      border-radius: 21px;
-      box-shadow: 0 8px 28px rgba(83,14,71,.055);
-      transition: transform .2s, box-shadow .2s, border-color .2s;
-    }
-    .service-card:hover {
-      transform: translateY(-5px);
-      border-color: #eea7d0;
-      box-shadow: 0 16px 35px rgba(83,14,71,.11);
-    }
-    .service-icon {
-      display: grid;
-      place-items: center;
-      width: 48px;
-      height: 48px;
-      margin-bottom: 17px;
-      border-radius: 16px;
-      color: var(--plum);
-      background: linear-gradient(145deg, #ffe8f4, #f7cce5);
-      font-size: 1.35rem;
-    }
-    .service-card:nth-child(3n + 2) .service-icon { color: #a51d5d; background: #fff0d8; }
-    .service-card h3 { margin-bottom: 6px; font-size: 1.05rem; }
-    .service-card p { margin: 0 0 13px; color: var(--muted); font-size: .88rem; }
-    .text-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      color: var(--pink);
-      font-size: .85rem;
-      font-weight: 800;
-      cursor: pointer;
-    }
-    .text-link:hover { color: var(--plum); }
-
-    .booking-section {
-      position: relative;
-      overflow: hidden;
-      padding: 86px 0;
-      color: white;
-      background:
-        radial-gradient(circle at 90% 10%, rgba(255, 95, 163, .38), transparent 30%),
-        linear-gradient(125deg, #4c0d49, #87166f 55%, #bd1c79);
-    }
-    .booking-section::after {
-      content: "✦";
-      position: absolute;
-      right: 5%;
-      bottom: -110px;
-      color: rgba(255,255,255,.055);
-      font-size: 350px;
-      line-height: 1;
-      pointer-events: none;
-    }
-    .booking-grid {
-      position: relative;
-      z-index: 1;
-      display: grid;
-      grid-template-columns: .85fr 1.15fr;
-      align-items: center;
-      gap: 55px;
-    }
-    .booking-copy .eyebrow { color: white; background: rgba(255,255,255,.13); border-color: rgba(255,255,255,.2); }
-    .booking-copy h2 { margin-top: 18px; }
-    .booking-copy p { max-width: 450px; color: rgba(255,255,255,.78); }
-    .booking-bullets { display: grid; gap: 12px; margin-top: 26px; }
-    .booking-bullets span { display: flex; align-items: center; gap: 10px; color: #fff2f8; font-weight: 600; }
-    .booking-bullets i {
-      display: grid; place-items: center;
-      width: 25px; height: 25px;
-      border-radius: 50%; background: var(--gold); color: var(--plum-dark);
-      font-style: normal; font-size: .8rem; font-weight: 900;
-    }
-    .booking-form {
-      padding: 30px;
-      color: var(--ink);
-      background: white;
-      border-radius: var(--radius);
-      box-shadow: 0 25px 65px rgba(34, 4, 35, .28);
-    }
-    .booking-form h3 {
-      margin-bottom: 5px;
-      font-family: "Playfair Display", serif;
-      font-size: 1.65rem;
-    }
-    .form-intro { margin-bottom: 22px; color: var(--muted); font-size: .9rem; }
-    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
-    .field { display: grid; gap: 7px; }
-    .field.full { grid-column: 1 / -1; }
-    .field label { font-size: .82rem; font-weight: 800; }
-    .field input, .field select, .field textarea {
-      width: 100%;
-      min-height: 47px;
-      padding: 11px 13px;
-      outline: none;
-      color: var(--ink);
-      background: #fffafd;
-      border: 1px solid #eadbe7;
-      border-radius: 12px;
-      transition: border .2s, box-shadow .2s;
-    }
-    .field textarea { resize: vertical; min-height: 86px; }
-    .field input:focus, .field select:focus, .field textarea:focus {
-      border-color: var(--pink);
-      box-shadow: 0 0 0 3px rgba(237,35,135,.13);
-    }
-    .booking-form .button { width: 100%; margin-top: 17px; border-radius: 13px; }
-    .form-note { margin: 12px 0 0; text-align: center; color: #847685; font-size: .76rem; }
-    .form-message { display: none; margin-top: 12px; padding: 10px 12px; border-radius: 10px; font-size: .86rem; }
-    .form-message.error { display: block; color: #8b164c; background: #fff0f5; }
-    .form-message.success { display: block; color: #1b6844; background: #e9fff4; }
-
-    .contact-section { padding: 85px 0; background: #fff6fb; }
-    .contact-grid {
-      display: grid;
-      grid-template-columns: .9fr 1.1fr;
-      gap: 38px;
-      align-items: stretch;
-    }
-    .contact-panel {
-      padding: 36px;
-      border-radius: var(--radius);
-      background: white;
-      box-shadow: var(--shadow);
-    }
-    .contact-panel h2 { font-size: 2.5rem; }
-    .contact-panel > p { color: var(--muted); }
-    .contact-list { display: grid; gap: 15px; margin-top: 24px; }
-    .contact-item {
-      display: flex;
-      align-items: center;
-      gap: 13px;
-      padding: 12px 0;
-      border-bottom: 1px solid #f2e4ee;
-    }
-    .contact-item:last-child { border-bottom: 0; }
-    .contact-icon {
-      display: grid;
-      flex: 0 0 44px;
-      place-items: center;
-      height: 44px;
-      border-radius: 14px;
-      color: var(--plum);
-      background: #ffe8f4;
-      font-size: 1.18rem;
-    }
-    .contact-item small { display: block; color: var(--muted); font-size: .77rem; }
-    .contact-item strong { font-size: .96rem; }
-    .contact-item a:hover strong { color: var(--pink); }
-    .map-card {
-      position: relative;
-      display: flex;
-      min-height: 360px;
-      flex-direction: column;
-      justify-content: flex-end;
-      overflow: hidden;
-      padding: 30px;
-      color: white;
-      border-radius: var(--radius);
-      background:
-        linear-gradient(180deg, rgba(44,10,45,.05), rgba(44,10,45,.85)),
-        radial-gradient(ellipse at 65% 25%, #ffb9d7 0 7%, transparent 7.5%),
-        repeating-linear-gradient(30deg, transparent 0 36px, rgba(255,255,255,.18) 37px 40px, transparent 41px 76px),
-        repeating-linear-gradient(120deg, #e79ac3 0 30px, #d680b2 31px 34px, #f5bdd7 35px 70px);
-      box-shadow: var(--shadow);
-    }
-    .map-pin {
-      position: absolute;
-      left: 53%;
-      top: 36%;
-      display: grid;
-      place-items: center;
-      width: 67px;
-      height: 67px;
-      border: 7px solid rgba(255,255,255,.75);
-      border-radius: 50% 50% 50% 8px;
-      color: white;
-      background: var(--pink);
-      box-shadow: 0 10px 24px rgba(81, 10, 67, .3);
-      transform: rotate(-45deg);
-    }
-    .map-pin span { transform: rotate(45deg); font-size: 1.4rem; }
-    .map-card h3 { position: relative; margin-bottom: 7px; font-family: "Playfair Display",serif; font-size: 1.65rem; }
-    .map-card p { position: relative; margin-bottom: 18px; color: rgba(255,255,255,.9); }
-    .map-card .button { align-self: flex-start; color: var(--plum); background: white; box-shadow: none; }
-
-    footer {
-      padding: 28px 0;
-      color: rgba(255,255,255,.82);
-      background: #32102f;
-    }
-    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
-    .footer-inner p { margin: 0; font-size: .84rem; }
-    .footer-brand { color: white; font-family: "Playfair Display",serif; font-weight: 800; font-size: 1.15rem; }
-    .footer-brand span { color: #ff69aa; }
-    .back-top {
-      width: 40px; height: 40px; display: grid; place-items: center;
-      color: white; background: rgba(255,255,255,.12); border-radius: 13px;
-    }
-    .back-top:hover { background: var(--pink); }
-
-    @media (max-width: 900px) {
-      .hero-grid { gap: 28px; }
-      .services-grid { grid-template-columns: repeat(2, 1fr); }
-      .booking-grid { gap: 30px; }
-      .trust-inner { flex-direction: column; text-align: center; }
-    }
-    @media (max-width: 700px) {
-      .container { width: min(100% - 32px, 540px); }
-      .nav-wrap { min-height: 69px; }
-      .menu-toggle { display: grid; place-items: center; }
-      .nav-links {
-        display: none;
-        position: absolute;
-        top: calc(100% + 1px);
-        left: 0; right: 0;
-        padding: 14px 20px 20px;
-        background: #fffafd;
-        border-bottom: 1px solid #f0d8e9;
-        box-shadow: 0 12px 22px rgba(69,15,59,.1);
-        align-items: stretch;
-        gap: 0;
+    @keyframes pulse-green {
+      0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
       }
-      .nav-links.open { display: flex; flex-direction: column; }
-      .nav-links a:not(.button) { padding: 12px 4px; border-bottom: 1px solid #f4e6ef; }
-      .nav-links .button { margin-top: 13px; }
-      .hero { padding: 48px 0 58px; }
-      .hero-grid { grid-template-columns: 1fr; }
-      .hero-copy { font-size: 1rem; }
-      .poster-wrap { width: min(88%, 400px); justify-self: center; margin: 12px 0 8px; }
-      .poster-wrap img { max-height: 570px; }
-      .poster-tag { left: -20px; bottom: 24px; font-size: .76rem; }
-      .trust-items { flex-wrap: wrap; justify-content: center; gap: 9px 18px; }
-      section.content-section { padding: 67px 0; }
-      .services-grid { gap: 12px; }
-      .service-card { padding: 19px 16px; min-height: 200px; }
-      .booking-section { padding: 67px 0; }
-      .booking-grid, .contact-grid { grid-template-columns: 1fr; }
-      .booking-form { padding: 23px 19px; }
-      .contact-section { padding: 65px 0; }
-      .contact-panel { padding: 26px 22px; }
-      .map-card { min-height: 310px; }
-      .footer-inner { flex-wrap: wrap; }
-    }
-    @media (max-width: 430px) {
-      .brand { font-size: 1.32rem; }
-      h1 { font-size: 3.15rem; }
-      .services-grid { grid-template-columns: 1fr 1fr; }
-      .service-card { min-height: 213px; }
-      .form-grid { grid-template-columns: 1fr; }
-      .field.full { grid-column: auto; }
-      .hero-actions .button { flex: 1; padding-inline: 13px; }
-      .topline { font-size: .75rem; }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+      70% {
+        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+      }
     }
   </style>
 </head>
-<body>
-  <div class="topline">A little glam goes a long way ✨ &nbsp; Now welcoming new appointments in Ijebu</div>
+<body class="bg-brand-50 text-gray-800 antialiased selection:bg-brand-500 selection:text-white">
 
-  <header>
-    <div class="container nav-wrap">
-      <a class="brand" href="#home" aria-label="Hair by Esther home">
-        <span class="brand-mark">H<span style="color:#ffe04a">E</span></span>
-        <span>Hair <span>by</span> Esther</span>
+  <!-- TOP ANNOUNCEMENT BAR -->
+  <div class="bg-gradient-to-r from-brand-plum via-brand-dark to-brand-plum text-pink-100 text-xs sm:text-sm py-2 px-4 shadow-sm border-b border-pink-900/30">
+    <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
+      <div class="flex items-center gap-2 mx-auto md:mx-0 text-center font-medium">
+        <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+        <span>✨ Welcome to <strong>HairbyEsther</strong> Studio — "Offering the best beauty services"</span>
+      </div>
+      <div class="hidden md:flex items-center gap-6 text-xs tracking-wide">
+        <a href="https://wa.me/2347016286488" target="_blank" class="hover:text-white transition flex items-center gap-1.5">
+          <i class="fab fa-whatsapp text-emerald-400"></i> CEO Line 1: +234 701 628 6488
+        </a>
+        <a href="https://wa.me/2348152047702" target="_blank" class="hover:text-white transition flex items-center gap-1.5">
+          <i class="fab fa-whatsapp text-emerald-400"></i> Line 2: +234 815 204 7702
+        </a>
+        <span class="text-pink-300/80"><i class="fas fa-map-marker-alt text-pink-400"></i> Ijebu-Ode, Ogun State</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION HEADER -->
+  <header class="glass-nav sticky top-0 z-40 border-b border-pink-100 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-12 h-12 rounded-full bg-brand-plum flex items-center justify-center text-white shadow-md group-hover:scale-105 transition-transform duration-300 border-2 border-brand-200">
+          <i class="fas fa-spa text-xl text-pink-300"></i>
+        </div>
+        <div class="flex flex-col">
+          <span class="font-serif-title text-2xl sm:text-3xl font-extrabold tracking-tight text-gray-900 leading-none">
+            Hair<span class="text-brand-600">by</span>Esther
+          </span>
+          <span class="text-[10px] sm:text-xs font-semibold uppercase tracking-widest text-brand-dark opacity-80 mt-1">
+            Luxury Hair & Beauty Lounge
+          </span>
+        </div>
       </a>
-      <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false">☰</button>
-      <nav class="nav-links" aria-label="Main navigation">
-        <a href="#services">Our services</a>
-        <a href="#booking">Book an appointment</a>
-        <a href="#contact">Find us</a>
-        <a class="button" href="#booking">Let's get glam <span aria-hidden="true">↗</span></a>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden lg:flex items-center space-x-7 text-sm font-medium text-gray-700">
+        <a href="#services" class="hover:text-brand-700 transition">Services</a>
+        <a href="#gallery" class="hover:text-brand-700 transition">Styles Showcase</a>
+        <a href="#training" class="hover:text-brand-700 transition">Academy & Training</a>
+        <a href="#flyer-view" class="hover:text-brand-700 transition">Our Flyer</a>
+        <a href="#location" class="hover:text-brand-700 transition">Studio Location</a>
+        <a href="#booking" class="hover:text-brand-700 transition">Book Appointment</a>
       </nav>
+
+      <!-- Desktop Contact Actions -->
+      <div class="hidden sm:flex items-center gap-3">
+        <!-- WhatsApp CEO Dropdown Button -->
+        <div class="relative group">
+          <button class="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2.5 rounded-full text-xs font-semibold flex items-center gap-2 shadow-sm transition duration-200">
+            <i class="fab fa-whatsapp text-lg"></i>
+            <span>Chat CEO</span>
+            <i class="fas fa-chevron-down text-[10px] ml-1 opacity-70"></i>
+          </button>
+          
+          <div class="absolute right-0 mt-2 w-56 bg-white rounded-xl shadow-xl border border-pink-100 py-2 hidden group-hover:block transition duration-150 z-50">
+            <div class="px-3 py-1.5 text-[11px] font-semibold text-gray-400 uppercase tracking-wider">Select Line</div>
+            <a href="https://wa.me/2347016286488?text=Hello%20CEO%20Esther,%20I%20would%20like%20to%20make%20an%20inquiry%20about%20your%20services" target="_blank" class="flex items-center gap-3 px-3 py-2 text-xs text-gray-700 hover:bg-pink-50 transition">
+              <span class="w-7 h-7 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold">1</span>
+              <div>
+                <p class="font-medium text-gray-900">07016286488</p>
+                <p class="text-[10px] text-gray-500">WhatsApp (Fast Reply)</p>
+              </div>
+            </a>
+            <a href="https://wa.me/2348152047702?text=Hello%20CEO%20Esther,%20I%20would%20like%20to%20book%20a%20session%20with%20you" target="_blank" class="flex items-center gap-3 px-3 py-2 text-xs text-gray-700 hover:bg-pink-50 transition">
+              <span class="w-7 h-7 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold">2</span>
+              <div>
+                <p class="font-medium text-gray-900">08152047702</p>
+                <p class="text-[10px] text-gray-500">WhatsApp / Calls</p>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <a href="#booking" class="bg-brand-plum hover:bg-brand-dark text-white px-5 py-2.5 rounded-full text-xs font-semibold tracking-wide shadow-md hover:shadow-lg transition duration-200 flex items-center gap-2">
+          <i class="far fa-calendar-check"></i>
+          <span>Book Now</span>
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button id="mobileMenuBtn" aria-label="Toggle navigation menu" class="lg:hidden p-2 rounded-lg text-brand-dark hover:bg-brand-100 transition">
+        <i class="fas fa-bars text-xl"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Dropdown Navigation -->
+    <div id="mobileMenu" class="hidden lg:hidden border-t border-pink-100 bg-white px-4 pt-3 pb-6 space-y-3 shadow-lg">
+      <a href="#services" class="block py-2 text-sm font-medium text-gray-800 hover:text-brand-plum border-b border-gray-100">Our Services</a>
+      <a href="#gallery" class="block py-2 text-sm font-medium text-gray-800 hover:text-brand-plum border-b border-gray-100">Hair & Nail Gallery</a>
+      <a href="#training" class="block py-2 text-sm font-medium text-gray-800 hover:text-brand-plum border-b border-gray-100">Hair Academy Training</a>
+      <a href="#flyer-view" class="block py-2 text-sm font-medium text-gray-800 hover:text-brand-plum border-b border-gray-100">Official Rate Flyer</a>
+      <a href="#location" class="block py-2 text-sm font-medium text-gray-800 hover:text-brand-plum border-b border-gray-100">Visit Us (Ijebu-Ode)</a>
+      <a href="#booking" class="block py-2 text-sm font-medium text-brand-plum font-semibold">Online Appointment Form</a>
+      
+      <div class="pt-2 grid grid-cols-2 gap-2">
+        <a href="https://wa.me/2347016286488" target="_blank" class="w-full bg-emerald-600 text-white text-center py-2.5 rounded-lg text-xs font-medium flex items-center justify-center gap-2">
+          <i class="fab fa-whatsapp"></i> Line 1
+        </a>
+        <a href="https://wa.me/2348152047702" target="_blank" class="w-full bg-emerald-600 text-white text-center py-2.5 rounded-lg text-xs font-medium flex items-center justify-center gap-2">
+          <i class="fab fa-whatsapp"></i> Line 2
+        </a>
+      </div>
     </div>
   </header>
 
-  <main>
-    <section class="hero" id="home">
-      <div class="container hero-grid">
-        <div>
-          <div class="eyebrow"><span class="spark">✦</span> Your beauty, your way</div>
-          <h1>Feel good.<br><span class="gradient-text">Look gorgeous.</span></h1>
-          <p class="hero-copy">From flawless braids to show-stopping nails, Hair by Esther brings your beauty vision to life with care, creativity and a little extra sparkle.</p>
-          <div class="hero-actions">
-            <a class="button" href="#booking">Book your beauty session <span aria-hidden="true">→</span></a>
-            <a class="button outline" href="#services">Explore services</a>
+  <!-- HERO SECTION -->
+  <section class="relative overflow-hidden pt-8 pb-16 lg:py-20 bg-gradient-to-b from-brand-100/60 via-brand-50 to-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Content -->
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-200/70 border border-brand-300 text-brand-dark text-xs sm:text-sm font-semibold tracking-wide">
+            <i class="fas fa-crown text-amber-500"></i> #1 Premier Beauty Lounge in Ijebu-Ode
           </div>
-          <div class="hero-meta">
-            <span><b>✦</b> Beauty with a personal touch</span>
-            <span><b>⌖</b> Ijebu, Ogun State</span>
+          
+          <h1 class="font-serif-title text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-[1.15] tracking-tight">
+            Offering the <span class="text-brand-plum italic underline decoration-pink-300 decoration-wavy decoration-2">Best Beauty</span> Services
+          </h1>
+          
+          <p class="text-gray-600 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+            Elevate your confidence with flawless Frontal Installations, elegant Braids, statement Nail artistry, Wig revamping, precision Wig making, and accredited beauty training under CEO Esther.
+          </p>
+
+          <!-- Key highlights matching flyer list -->
+          <div class="flex flex-wrap gap-2 justify-center lg:justify-start pt-1">
+            <span class="px-3 py-1 bg-white border border-pink-200 rounded-lg text-xs font-medium text-gray-700 shadow-sm"><i class="fas fa-check-circle text-brand-plum mr-1"></i> Frontal Installation</span>
+            <span class="px-3 py-1 bg-white border border-pink-200 rounded-lg text-xs font-medium text-gray-700 shadow-sm"><i class="fas fa-check-circle text-brand-plum mr-1"></i> Nails</span>
+            <span class="px-3 py-1 bg-white border border-pink-200 rounded-lg text-xs font-medium text-gray-700 shadow-sm"><i class="fas fa-check-circle text-brand-plum mr-1"></i> Braids</span>
+            <span class="px-3 py-1 bg-white border border-pink-200 rounded-lg text-xs font-medium text-gray-700 shadow-sm"><i class="fas fa-check-circle text-brand-plum mr-1"></i> Wig Revamping</span>
+            <span class="px-3 py-1 bg-white border border-pink-200 rounded-lg text-xs font-medium text-gray-700 shadow-sm"><i class="fas fa-check-circle text-brand-plum mr-1"></i> Wig Making</span>
+            <span class="px-3 py-1 bg-white border border-pink-200 rounded-lg text-xs font-medium text-gray-700 shadow-sm"><i class="fas fa-check-circle text-brand-plum mr-1"></i> Hair Accessories</span>
+            <span class="px-3 py-1 bg-white border border-pink-200 rounded-lg text-xs font-medium text-gray-700 shadow-sm"><i class="fas fa-check-circle text-brand-plum mr-1"></i> Professional Training</span>
+          </div>
+
+          <!-- CTAs -->
+          <div class="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+            <a href="#booking" class="w-full sm:w-auto text-center px-8 py-4 bg-brand-plum hover:bg-brand-dark text-white font-semibold rounded-xl shadow-lg shadow-pink-900/20 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5">
+              <i class="far fa-calendar-alt mr-2"></i> Book Appointment Online
+            </a>
+            
+            <a href="https://wa.me/2347016286488?text=Hello%20CEO%20Esther!%20I'm%20contacting%20you%20from%20hairbyesther%20website" target="_blank" class="w-full sm:w-auto text-center px-6 py-4 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-xl shadow-md hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2">
+              <i class="fab fa-whatsapp text-xl"></i> Reach CEO on WhatsApp
+            </a>
+          </div>
+
+          <!-- Quick Address snippet -->
+          <div class="pt-4 flex items-center justify-center lg:justify-start gap-3 text-xs sm:text-sm text-gray-600">
+            <span class="p-2 bg-pink-100 rounded-full text-brand-plum"><i class="fas fa-map-marker-alt"></i></span>
+            <span><strong>Studio:</strong> 34-36, Igbeba Road, Ijebu-Ode, Ogun State</span>
           </div>
         </div>
 
-        <div class="poster-wrap">
-          <img src="https://www.designarena.ai/u/b7279173-8ca9-4317-a95a-cc4fdd6be8d2" alt="Hair by Esther services and examples of hairstyles and nail designs">
-          <div class="poster-tag">
-            <span class="tag-icon">✦</span>
-            <span>Good hair days<br>start right here</span>
+        <!-- Right Visual with Flyer Card Showcase -->
+        <div class="lg:col-span-5 relative">
+          <div class="relative mx-auto max-w-md">
+            
+            <!-- Ambient Glow -->
+            <div class="absolute -inset-1.5 bg-gradient-to-r from-brand-600 via-pink-400 to-purple-600 rounded-3xl blur-lg opacity-40 animate-pulse"></div>
+            
+            <!-- Main Featured Image Container -->
+            <div class="relative bg-white p-3 rounded-2xl shadow-2xl border border-pink-100 overflow-hidden">
+              <img src="https://www.designarena.ai/u/c2182f9c-79f3-424f-82b7-223fc8d6e225" 
+                   alt="HairbyEsther Services and Rate Board" 
+                   class="w-full h-auto rounded-xl object-cover hover:scale-[1.02] transition duration-500 shadow-sm cursor-pointer"
+                   onclick="openModal('https://www.designarena.ai/u/c2182f9c-79f3-424f-82b7-223fc8d6e225')"
+                   title="Click to view full flyer">
+              
+              <!-- Overlay Pill -->
+              <div class="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-md p-3.5 rounded-xl border border-pink-200/80 shadow-lg flex items-center justify-between">
+                <div>
+                  <p class="text-xs font-bold text-gray-900 uppercase tracking-wide">HairbyEsther Official</p>
+                  <p class="text-[11px] text-brand-plum font-semibold">📍 34-36 Igbeba Road, Ijebu-Ode</p>
+                </div>
+                <button onclick="openModal('https://www.designarena.ai/u/c2182f9c-79f3-424f-82b7-223fc8d6e225')" class="px-3 py-1.5 bg-brand-plum text-white text-[11px] rounded-lg font-medium hover:bg-brand-dark transition">
+                  <i class="fas fa-expand mr-1"></i> Expand Flyer
+                </button>
+              </div>
+            </div>
+
+            <!-- Floating Badge: WhatsApp Quick Contact -->
+            <div class="absolute -top-4 -right-4 bg-white p-3 rounded-2xl shadow-xl border border-emerald-100 flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-emerald-500 text-white flex items-center justify-center text-xl pulse-ring">
+                <i class="fab fa-whatsapp"></i>
+              </div>
+              <div class="text-left pr-2">
+                <span class="block text-[10px] text-gray-500 uppercase tracking-wider font-semibold">Direct CEO line</span>
+                <a href="https://wa.me/2347016286488" target="_blank" class="text-xs font-bold text-gray-900 hover:text-emerald-600 transition">
+                  07016286488
+                </a>
+              </div>
+            </div>
+
           </div>
         </div>
-      </div>
-    </section>
 
-    <div class="trust-strip">
-      <div class="container trust-inner">
-        <p>Beautiful looks, made just for you.</p>
-        <div class="trust-items">
-          <span><i>✦</i> Skilled hands</span>
-          <span><i>✦</i> Personal care</span>
-          <span><i>✦</i> Looks you’ll love</span>
-        </div>
       </div>
     </div>
+  </section>
 
-    <section class="content-section" id="services">
-      <div class="container">
-        <div class="section-heading">
-          <div class="eyebrow"><span class="spark">✦</span> The good stuff</div>
-          <h2>Our beauty services</h2>
-          <p>Pick your next look. Whether it’s a fresh set, a new style or a skill you want to learn, we’re here to make it happen.</p>
+  <!-- QUICK CONTACT TICKER & DIRECT CONNECT SECTION -->
+  <section class="py-6 bg-brand-dark text-white border-y border-pink-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-center text-center md:text-left">
+        
+        <div class="flex items-center justify-center md:justify-start gap-4">
+          <div class="w-12 h-12 rounded-xl bg-pink-500/20 text-pink-300 flex items-center justify-center text-xl border border-pink-400/30">
+            <i class="fab fa-whatsapp text-emerald-400 text-2xl"></i>
+          </div>
+          <div>
+            <h4 class="text-xs font-semibold text-pink-200 uppercase tracking-wider">WhatsApp CEO Line 1</h4>
+            <a href="https://wa.me/2347016286488?text=Hello%20CEO%20Esther" target="_blank" class="text-lg font-bold text-white hover:text-emerald-400 transition tracking-wide">
+              07016286488
+            </a>
+          </div>
         </div>
-        <div class="services-grid">
-          <article class="service-card">
-            <div class="service-icon" aria-hidden="true">✧</div>
-            <h3>Frontal Installation</h3>
-            <p>Get a seamless, natural-looking finish with a style made for you.</p>
-            <a class="text-link book-service" href="#booking" data-service="Frontal Installation">Book this service <span>→</span></a>
-          </article>
-          <article class="service-card">
-            <div class="service-icon" aria-hidden="true">💅</div>
-            <h3>Nails</h3>
-            <p>Polished, pretty nail sets for everyday glam and special moments.</p>
-            <a class="text-link book-service" href="#booking" data-service="Nails">Book this service <span>→</span></a>
-          </article>
-          <article class="service-card">
-            <div class="service-icon" aria-hidden="true">〰</div>
-            <h3>Braids</h3>
-            <p>Beautiful braid styles, lovingly created to suit your look.</p>
-            <a class="text-link book-service" href="#booking" data-service="Braids">Book this service <span>→</span></a>
-          </article>
-          <article class="service-card">
-            <div class="service-icon" aria-hidden="true">✦</div>
-            <h3>Revamping</h3>
-            <p>Give your hair a refresh and bring a favorite look back to life.</p>
-            <a class="text-link book-service" href="#booking" data-service="Revamping">Book this service <span>→</span></a>
-          </article>
-          <article class="service-card">
-            <div class="service-icon" aria-hidden="true">♡</div>
-            <h3>Wigging</h3>
-            <p>Wig styling and finishing touches to help you feel your best.</p>
-            <a class="text-link book-service" href="#booking" data-service="Wigging">Book this service <span>→</span></a>
-          </article>
-          <article class="service-card">
-            <div class="service-icon" aria-hidden="true">❀</div>
-            <h3>Hair Accessories</h3>
-            <p>Add a playful finishing touch to your hairstyle with lovely accessories.</p>
-            <a class="text-link book-service" href="#booking" data-service="Hair Accessories">Book this service <span>→</span></a>
-          </article>
-          <article class="service-card">
-            <div class="service-icon" aria-hidden="true">✎</div>
-            <h3>Beauty Training</h3>
-            <p>Learn beauty skills with hands-on guidance from Esther.</p>
-            <a class="text-link book-service" href="#booking" data-service="Training">Ask about training <span>→</span></a>
-          </article>
+
+        <div class="flex items-center justify-center md:justify-start gap-4">
+          <div class="w-12 h-12 rounded-xl bg-pink-500/20 text-pink-300 flex items-center justify-center text-xl border border-pink-400/30">
+            <i class="fas fa-phone-alt text-amber-400 text-xl"></i>
+          </div>
+          <div>
+            <h4 class="text-xs font-semibold text-pink-200 uppercase tracking-wider">WhatsApp / Calls Line 2</h4>
+            <a href="https://wa.me/2348152047702?text=Hello%20CEO%20Esther" target="_blank" class="text-lg font-bold text-white hover:text-amber-300 transition tracking-wide">
+              08152047702
+            </a>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-center md:justify-start gap-4">
+          <div class="w-12 h-12 rounded-xl bg-pink-500/20 text-pink-300 flex items-center justify-center text-xl border border-pink-400/30">
+            <i class="fas fa-map-marked-alt text-pink-400 text-xl"></i>
+          </div>
+          <div>
+            <h4 class="text-xs font-semibold text-pink-200 uppercase tracking-wider">Studio Address</h4>
+            <p class="text-sm font-semibold text-white">
+              34-36, Igbeba Road, Ijebu-Ode, Ogun State
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT WE DO: OUR SERVICES (Extracted strictly from flyer list & expanded for customers) -->
+  <section id="services" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-block px-4 py-1 rounded-full bg-pink-100 text-brand-plum text-xs font-bold uppercase tracking-wider mb-3">
+          Our Specializations
+        </div>
+        <h2 class="font-serif-title text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900">
+          Our Signature Services
+        </h2>
+        <div class="w-20 h-1 bg-brand-plum mx-auto my-4 rounded-full"></div>
+        <p class="text-gray-600 text-sm sm:text-base">
+          From the service list on our studio board, we craft tailored transformations with high-grade precision, gentle scalp care, and flawless styling.
+        </p>
+      </div>
+
+      <!-- Services Grid matching flyer -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Service 1: Frontal Installation -->
+        <div class="bg-brand-50/50 rounded-2xl p-7 border border-pink-100 hover:border-brand-300 card-shadow transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between group">
+          <div>
+            <div class="w-14 h-14 rounded-2xl bg-brand-plum text-pink-200 flex items-center justify-center text-2xl mb-5 group-hover:scale-110 transition duration-300">
+              <i class="fas fa-magic"></i>
+            </div>
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="text-xl font-bold text-gray-900 group-hover:text-brand-plum transition">Frontal Installation</h3>
+              <span class="text-xs bg-pink-100 text-brand-dark px-2.5 py-1 rounded-full font-semibold">Popular</span>
+            </div>
+            <p class="text-gray-600 text-sm leading-relaxed mb-4">
+              Melted lace, undetectable hairline customization, bleached knots, customized baby hair, and secure installation that looks completely natural.
+            </p>
+            <ul class="text-xs text-gray-500 space-x-2 space-y-1.5 list-none mb-6">
+              <li><i class="fas fa-check text-brand-plum mr-1.5"></i> Lace Customization & Tinting</li>
+              <li><i class="fas fa-check text-brand-plum mr-1.5"></i> Glue / Glueless Options</li>
+              <li><i class="fas fa-check text-brand-plum mr-1.5"></i> Long-lasting Melt Finish</li>
+            </ul>
+          </div>
+          <button onclick="selectServiceForBooking('Frontal Installation')" class="w-full py-2.5 px-4 bg-white hover:bg-brand-plum hover:text-white text-brand-plum border border-brand-plum/30 rounded-xl font-semibold text-xs transition duration-200 flex items-center justify-center gap-2">
+            <span>Book Frontal Session</span>
+            <i class="fas fa-arrow-right text-[10px]"></i>
+          </button>
+        </div>
+
+        <!-- Service 2: Nails Artistry -->
+        <div class="bg-brand-50/50 rounded-2xl p-7 border border-pink-100 hover:border-brand-300 card-shadow transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between group">
+          <div>
+            <div class="w-14 h-14 rounded-2xl bg-brand-plum text-pink-200 flex items-center justify-center text-2xl mb-5 group-hover:scale-110 transition duration-300">
+              <i class="fas fa-hand-sparkles"></i>
+            </div>
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="text-xl font-bold text-gray-900 group-hover:text-brand-plum transition">Nails Artistry</h3>
+              <span class="text-xs bg-pink-100 text-brand-dark px-2.5 py-1 rounded-full font-semibold">Trending</span>
+            </div>
+            <p class="text-gray-600 text-sm leading-relaxed mb-4">
+              Acrylic extensions, French tips, marble designs, stiletto, coffin, gel polish, gemstone embeds, and luxury manicure care.
+            </p>
+            <ul class="text-xs text-gray-500 space-x-2 space-y-1.5 list-none mb-6">
+              <li><i class="fas fa-check text-brand-plum mr-1.5"></i> Stiletto, Coffin & Almond Shapes</li>
+              <li><i class="fas fa-check text-brand-plum mr-1.5"></i> Custom Nail Art & Gems</li>
+              <li><i class="fas fa-check text-brand-plum mr-1.5"></i> Long-lasting Polygel / Acrylic</li>
+            </ul>
+          </div>
+          <button onclick="selectServiceForBooking('Nails')" class="w-full py-2.5 px-4 bg-white hover:bg-brand-plum hover:text-white text-brand-plum border border-brand-plum/30 rounded-xl font-semibold text-xs transition duration-200 flex items-center justify-center gap-2">
+            <span>Book Nail Session</span>
+            <i class="fas fa-arrow-right text-[10px]"></i>
+          </button>
+        </div>
+
+        <!-- Service 3: Braids -->
+        <div class="bg-brand-50/50 rounded-2xl p-7 border border-pink-100 hover:border-brand-300 card-shadow transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between group">
+          <div>
+            <div class="w-14 h-14 rounded-2xl bg-brand-plum text-pink-200 flex items-center justify-center text-2xl mb-5 group-hover:scale-110 transition duration-300">
+              <i class="fas fa-feather-alt"></i>
+            </div>
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="text-xl font-bold text-gray-900 group-hover:text-brand-plum transition">Braids & Cornrows</h3>
+              <span class="text-xs bg-pink-100 text-brand-dark px-2.5 py-1 rounded-full font-semibold">Protective</span>
+            </div>
+            <p class="text-gray-600 text-sm leading-relaxed mb-4">
+              Neat Knotless braids, Stitch braids, Bohemian box braids, French curls, twist braids, and all protective styles designed to protect your edges.
+            </p>
+            <ul class="text-xs text-gray-500 space-x-2 space-y-1.5 list-none mb-6">
+              <li><i class="fas fa-check text-brand-plum mr-1.5"></i> Knotless & Goddess Braids</li>
+              <li><i class="fas fa-check text-brand-plum mr-1.5"></i> Precision Geometric Parts</li>
+              <li><i class="fas fa-check text-brand-plum mr-1.5"></i> Feather-light & Edge-friendly</li>
+            </ul>
+          </div>
+          <button onclick="selectServiceForBooking('Braids')" class="w-full py-2.5 px-4 bg-white hover:bg-brand-plum hover:text-white text-brand-plum border border-brand-plum/30 rounded-xl font-semibold text-xs transition duration-200 flex items-center justify-center gap-2">
+            <span>Book Braiding Session</span>
+            <i class="fas fa-arrow-right text-[10px]"></i>
+          </button>
+        </div>
+
+        <!-- Service 4: Revamping -->
+        <div class="bg-brand-50/50 rounded-2xl p-7 border border-pink-100 hover:border-brand-300 card-shadow transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between group">
+          <div>
+            <div class="w-14 h-14 rounded-2xl bg-brand-plum text-pink-200 flex items-center justify-center text-2xl mb-5 group-hover:scale-110 transition duration-300">
+              <i class="fas fa-sync-alt"></i>
+            </div>
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="text-xl font-bold text-gray-900 group-hover:text-brand-plum transition">Wig Revamping</h3>
+              <span class="text-xs bg-pink-100 text-brand-dark px-2.5 py-1 rounded-full font-semibold">Restoration</span>
+            </div>
+            <p class="text-gray-600 text-sm leading-relaxed mb-4">
+              Bring your old, tangled, dull human hair wigs back to brand new life with our deep conditioning, detangling, silk-press, curl restoration, and restyling.
+            </p>
+            <ul class="text-xs text-gray-500 space-x-2 space-y-1.5 list-none mb-6">
+              <li><i class="fas fa-check text-brand-plum mr-1.5"></i> Deep Moisture Treatment</li>
+              <li><i class="fas fa-check text-brand-plum mr-1.5"></i> Curl Activation & Hot Comb Press</li>
+              <li><i class="fas fa-check text-brand-plum mr-1.5"></i> Elastic Band & Comb Replacement</li>
+            </ul>
+          </div>
+          <button onclick="selectServiceForBooking('Revamping')" class="w-full py-2.5 px-4 bg-white hover:bg-brand-plum hover:text-white text-brand-plum border border-brand-plum/30 rounded-xl font-semibold text-xs transition duration-200 flex items-center justify-center gap-2">
+            <span>Revamp My Wig</span>
+            <i class="fas fa-arrow-right text-[10px]"></i>
+          </button>
+        </div>
+
+        <!-- Service 5: Wig Making / Wigging -->
+        <div class="bg-brand-50/50 rounded-2xl p-7 border border-pink-100 hover:border-brand-300 card-shadow transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between group">
+          <div>
+            <div class="w-14 h-14 rounded-2xl bg-brand-plum text-pink-200 flex items-center justify-center text-2xl mb-5 group-hover:scale-110 transition duration-300">
+              <i class="fas fa-scissors"></i>
+            </div>
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="text-xl font-bold text-gray-900 group-hover:text-brand-plum transition">Wig Making (Wiging)</h3>
+              <span class="text-xs bg-pink-100 text-brand-dark px-2.5 py-1 rounded-full font-semibold">Custom Fit</span>
+            </div>
+            <p class="text-gray-600 text-sm leading-relaxed mb-4">
+              Custom machine-stitched and hand-sewn wig construction according to your exact head measurements. Frontal, closure, and 360 units tailored for long-term wear.
+            </p>
+            <ul class="text-xs text-gray-500 space-x-2 space-y-1.5 list-none mb-6">
+              <li><i class="fas fa-check text-brand-plum mr-1.5"></i> Perfect Head Fit Guaranteed</li>
+              <li><i class="fas fa-check text-brand-plum mr-1.5"></i> Machine Stitched for Durability</li>
+              <li><i class="fas fa-check text-brand-plum mr-1.5"></i> Ready-to-Wear Styling</li>
+            </ul>
+          </div>
+          <button onclick="selectServiceForBooking('Wiging / Wig Making')" class="w-full py-2.5 px-4 bg-white hover:bg-brand-plum hover:text-white text-brand-plum border border-brand-plum/30 rounded-xl font-semibold text-xs transition duration-200 flex items-center justify-center gap-2">
+            <span>Order Custom Wig</span>
+            <i class="fas fa-arrow-right text-[10px]"></i>
+          </button>
+        </div>
+
+        <!-- Service 6: Hair Accessories & Training -->
+        <div class="bg-brand-50/50 rounded-2xl p-7 border border-pink-100 hover:border-brand-300 card-shadow transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between group">
+          <div>
+            <div class="w-14 h-14 rounded-2xl bg-brand-plum text-pink-200 flex items-center justify-center text-2xl mb-5 group-hover:scale-110 transition duration-300">
+              <i class="fas fa-gem"></i>
+            </div>
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="text-xl font-bold text-gray-900 group-hover:text-brand-plum transition">Hair Accessories & Training</h3>
+              <span class="text-xs bg-emerald-100 text-emerald-800 px-2.5 py-1 rounded-full font-semibold">Academy</span>
+            </div>
+            <p class="text-gray-600 text-sm leading-relaxed mb-4">
+              Shop salon-grade bonnets, melting bands, hair waxes, styling mousse, heat protectants, plus hands-on Masterclasses & apprenticeship certifications.
+            </p>
+            <ul class="text-xs text-gray-500 space-x-2 space-y-1.5 list-none mb-6">
+              <li><i class="fas fa-check text-brand-plum mr-1.5"></i> Premium Lace Melting Sprays & Bands</li>
+              <li><i class="fas fa-check text-brand-plum mr-1.5"></i> 1-on-1 Beginner to Pro Mentorship</li>
+              <li><i class="fas fa-check text-brand-plum mr-1.5"></i> Certificate of Completion</li>
+            </ul>
+          </div>
+          <button onclick="selectServiceForBooking('Training / Hair Accessories')" class="w-full py-2.5 px-4 bg-white hover:bg-brand-plum hover:text-white text-brand-plum border border-brand-plum/30 rounded-xl font-semibold text-xs transition duration-200 flex items-center justify-center gap-2">
+            <span>Inquire Training / Products</span>
+            <i class="fas fa-arrow-right text-[10px]"></i>
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FLYER SHOWCASE & REAL ATTRACTIONS SECTION -->
+  <section id="flyer-view" class="py-16 bg-gradient-to-b from-white to-pink-50/70 border-t border-pink-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="bg-brand-dark rounded-3xl p-6 sm:p-10 lg:p-12 text-white relative overflow-hidden shadow-2xl">
+        <div class="absolute -right-20 -bottom-20 w-80 h-80 rounded-full bg-pink-500/10 blur-3xl"></div>
+        <div class="absolute -left-20 -top-20 w-80 h-80 rounded-full bg-brand-600/20 blur-3xl"></div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+          
+          <div class="lg:col-span-6 space-y-5">
+            <span class="inline-block px-3 py-1 bg-pink-500/20 text-pink-300 border border-pink-400/30 rounded-full text-xs font-semibold tracking-wider uppercase">
+              Official Studio Board
+            </span>
+            <h2 class="font-serif-title text-3xl sm:text-4xl font-bold leading-tight">
+              Verified Studio Quality & Direct Booking with Esther
+            </h2>
+            <p class="text-pink-100/90 text-sm sm:text-base leading-relaxed">
+              Every hairstyle and nail design featured on our promotional board reflects our authentic workmanship. We welcome clients from all across Ogun State and neighboring regions.
+            </p>
+            
+            <div class="space-y-3 pt-2">
+              <div class="flex items-center gap-3">
+                <span class="w-8 h-8 rounded-lg bg-pink-600/40 text-pink-300 flex items-center justify-center text-sm"><i class="fas fa-map-pin"></i></span>
+                <span class="text-sm font-medium">34-36, Igbeba Road, Ijebu-Ode, Ogun State</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <span class="w-8 h-8 rounded-lg bg-emerald-600/40 text-emerald-300 flex items-center justify-center text-sm"><i class="fab fa-whatsapp"></i></span>
+                <span class="text-sm font-medium">WhatsApp 1: <strong>07016286488</strong> (Instant Chat)</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <span class="w-8 h-8 rounded-lg bg-amber-600/40 text-amber-300 flex items-center justify-center text-sm"><i class="fas fa-phone-alt"></i></span>
+                <span class="text-sm font-medium">WhatsApp 2: <strong>08152047702</strong> (Calls / Booking)</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <span class="w-8 h-8 rounded-lg bg-pink-400/30 text-pink-300 flex items-center justify-center text-sm"><i class="fab fa-instagram"></i></span>
+                <span class="text-sm font-medium">Instagram: <strong>Hair by Esther</strong></span>
+              </div>
+              <div class="flex items-center gap-3">
+                <span class="w-8 h-8 rounded-lg bg-gray-700/60 text-pink-300 flex items-center justify-center text-sm"><i class="fab fa-tiktok"></i></span>
+                <span class="text-sm font-medium">TikTok: <strong>@Estherstyledme</strong></span>
+              </div>
+            </div>
+
+            <div class="pt-4 flex flex-wrap gap-3">
+              <a href="https://wa.me/2347016286488?text=Hello%20CEO%20Esther,%20I'm%20ready%20to%20book%20an%20appointment!" target="_blank" class="px-6 py-3 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl text-xs sm:text-sm font-bold shadow-lg transition flex items-center gap-2">
+                <i class="fab fa-whatsapp text-lg"></i> Message Esther Now
+              </a>
+              <button onclick="openModal('https://www.designarena.ai/u/c2182f9c-79f3-424f-82b7-223fc8d6e225')" class="px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/20 text-white rounded-xl text-xs sm:text-sm font-semibold transition flex items-center gap-2">
+                <i class="fas fa-search-plus"></i> View Full Original Board
+              </button>
+            </div>
+          </div>
+
+          <div class="lg:col-span-6 flex justify-center">
+            <div class="relative group cursor-pointer max-w-sm rounded-2xl overflow-hidden border-4 border-white/20 shadow-2xl" onclick="openModal('https://www.designarena.ai/u/c2182f9c-79f3-424f-82b7-223fc8d6e225')">
+              <img src="https://www.designarena.ai/u/c2182f9c-79f3-424f-82b7-223fc8d6e225" alt="HairbyEsther Original Promotional Poster" class="w-full h-auto object-cover group-hover:scale-105 transition duration-500">
+              <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-medium text-sm">
+                <span class="px-4 py-2 bg-brand-plum rounded-lg shadow-lg flex items-center gap-2">
+                  <i class="fas fa-search"></i> Click to Zoom In
+                </span>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
-    </section>
 
-    <section class="booking-section" id="booking">
-      <div class="container booking-grid">
-        <div class="booking-copy">
-          <div class="eyebrow"><span class="spark">✦</span> Your next look awaits</div>
-          <h2>Let’s get you booked.</h2>
-          <p>Tell us what you have in mind and we’ll take it from there. Send your request straight to Esther on WhatsApp to confirm a time.</p>
-          <div class="booking-bullets">
-            <span><i>✓</i> Choose the service you want</span>
-            <span><i>✓</i> Pick a day that works for you</span>
-            <span><i>✓</i> Chat directly with Esther to confirm</span>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE GALLERY / STYLES LOOKBOOK -->
+  <section id="gallery" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+        <div>
+          <span class="text-brand-plum text-xs font-bold uppercase tracking-wider">Lookbook</span>
+          <h2 class="font-serif-title text-3xl sm:text-4xl font-extrabold text-gray-900 mt-1">
+            Client Transformations & Work
+          </h2>
+        </div>
+
+        <!-- Filter tabs -->
+        <div class="flex flex-wrap gap-2 mt-4 md:mt-0" id="galleryFilters">
+          <button onclick="filterGallery('all')" class="filter-btn active px-4 py-2 text-xs font-semibold rounded-full bg-brand-plum text-white transition">All Works</button>
+          <button onclick="filterGallery('frontals')" class="filter-btn px-4 py-2 text-xs font-semibold rounded-full bg-pink-100 text-gray-700 hover:bg-brand-100 transition">Frontals & Wigs</button>
+          <button onclick="filterGallery('braids')" class="filter-btn px-4 py-2 text-xs font-semibold rounded-full bg-pink-100 text-gray-700 hover:bg-brand-100 transition">Braids</button>
+          <button onclick="filterGallery('nails')" class="filter-btn px-4 py-2 text-xs font-semibold rounded-full bg-pink-100 text-gray-700 hover:bg-brand-100 transition">Nails</button>
+        </div>
+      </div>
+
+      <!-- Gallery Grid with clean placeholder images representing flyer categories -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="galleryGrid">
+        
+        <!-- Item 1: Frontal Install -->
+        <div class="gallery-item frontals group relative rounded-2xl overflow-hidden shadow-md bg-gray-100">
+          <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?auto=format&fit=crop&w=700&q=80" alt="Lace Frontal Install" class="w-full h-80 object-cover group-hover:scale-105 transition duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90 p-5 flex flex-col justify-end text-white">
+            <span class="text-[11px] font-semibold text-pink-300 uppercase">Frontal Installation</span>
+            <h4 class="text-lg font-bold">Melted HD Lace Bone Straight Install</h4>
+            <p class="text-xs text-gray-300 mt-1">Seamless hairline with natural baby hair styling.</p>
           </div>
         </div>
 
-        <form class="booking-form" id="bookingForm">
-          <h3>Request an appointment</h3>
-          <p class="form-intro">Fill this in and we’ll open WhatsApp with your booking details.</p>
-          <div class="form-grid">
-            <div class="field">
-              <label for="customerName">Your name</label>
-              <input id="customerName" name="name" type="text" placeholder="e.g. Ada" required autocomplete="name">
+        <!-- Item 2: Stiletto & Coffin Nails -->
+        <div class="gallery-item nails group relative rounded-2xl overflow-hidden shadow-md bg-gray-100">
+          <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=700&q=80" alt="Nail Art Design" class="w-full h-80 object-cover group-hover:scale-105 transition duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90 p-5 flex flex-col justify-end text-white">
+            <span class="text-[11px] font-semibold text-pink-300 uppercase">Luxury Nails</span>
+            <h4 class="text-lg font-bold">Burgundy Ombre Stiletto Gel Extensions</h4>
+            <p class="text-xs text-gray-300 mt-1">Hand-painted French tips with floral acrylic inlays.</p>
+          </div>
+        </div>
+
+        <!-- Item 3: Stitch & Geometric Braids -->
+        <div class="gallery-item braids group relative rounded-2xl overflow-hidden shadow-md bg-gray-100">
+          <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=700&q=80" alt="Braids Styling" class="w-full h-80 object-cover group-hover:scale-105 transition duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90 p-5 flex flex-col justify-end text-white">
+            <span class="text-[11px] font-semibold text-pink-300 uppercase">Braids Art</span>
+            <h4 class="text-lg font-bold">Clean Stitch Braids & Low Ponytail</h4>
+            <p class="text-xs text-gray-300 mt-1">Symmetrical lines with pristine finish.</p>
+          </div>
+        </div>
+
+        <!-- Item 4: Bohemian Curls -->
+        <div class="gallery-item braids group relative rounded-2xl overflow-hidden shadow-md bg-gray-100">
+          <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=700&q=80" alt="Boho Curls" class="w-full h-80 object-cover group-hover:scale-105 transition duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90 p-5 flex flex-col justify-end text-white">
+            <span class="text-[11px] font-semibold text-pink-300 uppercase">Braids & Curls</span>
+            <h4 class="text-lg font-bold">Bohemian French Curl Knotless Box</h4>
+            <p class="text-xs text-gray-300 mt-1">Effortless bouncy curls and long-lasting roots.</p>
+          </div>
+        </div>
+
+        <!-- Item 5: Wig Revamp & Silk Press -->
+        <div class="gallery-item frontals group relative rounded-2xl overflow-hidden shadow-md bg-gray-100">
+          <img src="https://images.unsplash.com/photo-1560869713-7d0a29430803?auto=format&fit=crop&w=700&q=80" alt="Wig Revamp" class="w-full h-80 object-cover group-hover:scale-105 transition duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90 p-5 flex flex-col justify-end text-white">
+            <span class="text-[11px] font-semibold text-pink-300 uppercase">Wig Revamp</span>
+            <h4 class="text-lg font-bold">Silky Deep Treatment & Fringe Cut</h4>
+            <p class="text-xs text-gray-300 mt-1">Restored bounce, luster, and fresh perimeter styling.</p>
+          </div>
+        </div>
+
+        <!-- Item 6: Blue Sky Marble Nails -->
+        <div class="gallery-item nails group relative rounded-2xl overflow-hidden shadow-md bg-gray-100">
+          <img src="https://images.unsplash.com/photo-1632345031435-8727f6897d53?auto=format&fit=crop&w=700&q=80" alt="Marble Nail Art" class="w-full h-80 object-cover group-hover:scale-105 transition duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90 p-5 flex flex-col justify-end text-white">
+            <span class="text-[11px] font-semibold text-pink-300 uppercase">Nail Tech</span>
+            <h4 class="text-lg font-bold">Square Marble Tips & Gold Foil Inlay</h4>
+            <p class="text-xs text-gray-300 mt-1">Gentle cuticle cleanup with protective base.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- TRAINING & ACADEMY PROMO BANNER -->
+  <section id="training" class="py-16 bg-gradient-to-r from-pink-100 via-brand-100 to-pink-200 border-y border-pink-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-white rounded-3xl p-8 sm:p-12 shadow-xl border border-pink-200 flex flex-col lg:flex-row items-center justify-between gap-8">
+        
+        <div class="space-y-4 max-w-2xl">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-plum text-white text-xs font-semibold uppercase tracking-wider">
+            <i class="fas fa-graduation-cap"></i> Professional Certification
+          </div>
+          <h3 class="font-serif-title text-2xl sm:text-3xl lg:text-4xl font-extrabold text-gray-900 leading-tight">
+            Want to Become a Certified Hair Stylist or Nail Tech?
+          </h3>
+          <p class="text-gray-600 text-sm sm:text-base leading-relaxed">
+            Enroll in the <strong>HairbyEsther Training Academy</strong> at our Ijebu-Ode studio. Learn hands-on frontal customization, seamless melting, flawless braid patterns, acrylic nail sculpting, wig revamping, and how to launch your own profitable beauty brand.
+          </p>
+          <div class="flex flex-wrap gap-4 text-xs font-semibold text-brand-dark pt-2">
+            <span><i class="fas fa-check-circle text-brand-plum mr-1"></i> Beginner to Pro Curriculums</span>
+            <span><i class="fas fa-check-circle text-brand-plum mr-1"></i> Training Kit Provided</span>
+            <span><i class="fas fa-check-circle text-brand-plum mr-1"></i> Studio Apprenticeship</span>
+          </div>
+        </div>
+
+        <div class="flex-shrink-0 flex flex-col sm:flex-row gap-3 w-full lg:w-auto">
+          <a href="https://wa.me/2347016286488?text=Hello%20CEO%20Esther,%20I%20am%20interested%20in%20enrolling%20in%20your%20Beauty%20Training%20program" target="_blank" class="px-8 py-4 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl text-center text-sm shadow-md transition flex items-center justify-center gap-2">
+            <i class="fab fa-whatsapp text-lg"></i> Apply for Training (Line 1)
+          </a>
+          <a href="https://wa.me/2348152047702?text=Hello%20CEO%20Esther,%20please%20send%20me%20details%20about%20the%20Academy%20Syllabus" target="_blank" class="px-6 py-4 bg-brand-plum hover:bg-brand-dark text-white font-bold rounded-xl text-center text-sm shadow-md transition flex items-center justify-center gap-2">
+            <i class="fas fa-phone-alt"></i> Call Line 2
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ONLINE APPOINTMENT BOOKING FORM -->
+  <section id="booking" class="py-20 bg-brand-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="bg-white rounded-3xl p-6 sm:p-10 shadow-2xl border border-pink-100">
+        
+        <div class="text-center max-w-xl mx-auto mb-8">
+          <span class="text-xs font-bold uppercase tracking-widest text-brand-plum bg-pink-100 px-3 py-1 rounded-full">Reserve Your Slot</span>
+          <h2 class="font-serif-title text-3xl font-extrabold text-gray-900 mt-2">
+            Book an Appointment with HairbyEsther
+          </h2>
+          <p class="text-gray-500 text-xs sm:text-sm mt-1">
+            Fill in your preferred date and service. Clicking submit will automatically connect your booking directly to CEO Esther's WhatsApp for instant confirmation.
+          </p>
+        </div>
+
+        <form id="bookingForm" onsubmit="handleBookingSubmit(event)" class="space-y-6">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            
+            <!-- Full Name -->
+            <div>
+              <label class="block text-xs font-semibold text-gray-700 uppercase tracking-wider mb-2">
+                Your Full Name <span class="text-red-500">*</span>
+              </label>
+              <div class="relative">
+                <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-gray-400">
+                  <i class="far fa-user text-sm"></i>
+                </span>
+                <input type="text" id="clientName" required placeholder="e.g. Adebayo Blessing" class="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 focus:border-brand-plum focus:ring-2 focus:ring-pink-200 outline-none text-sm transition">
+              </div>
             </div>
-            <div class="field">
-              <label for="customerPhone">Your phone number</label>
-              <input id="customerPhone" name="phone" type="tel" placeholder="e.g. 080..." required autocomplete="tel">
+
+            <!-- Phone Number -->
+            <div>
+              <label class="block text-xs font-semibold text-gray-700 uppercase tracking-wider mb-2">
+                Phone / WhatsApp Number <span class="text-red-500">*</span>
+              </label>
+              <div class="relative">
+                <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-gray-400">
+                  <i class="fas fa-phone text-sm"></i>
+                </span>
+                <input type="tel" id="clientPhone" required placeholder="e.g. 08012345678" class="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 focus:border-brand-plum focus:ring-2 focus:ring-pink-200 outline-none text-sm transition">
+              </div>
             </div>
-            <div class="field">
-              <label for="serviceSelect">Choose a service</label>
-              <select id="serviceSelect" name="service" required>
-                <option value="">Select a service</option>
-                <option>Frontal Installation</option>
-                <option>Nails</option>
-                <option>Braids</option>
-                <option>Revamping</option>
-                <option>Wigging</option>
-                <option>Hair Accessories</option>
-                <option>Training</option>
-                <option>I'm not sure yet</option>
-              </select>
+
+            <!-- Service Selection -->
+            <div>
+              <label class="block text-xs font-semibold text-gray-700 uppercase tracking-wider mb-2">
+                Select Service <span class="text-red-500">*</span>
+              </label>
+              <div class="relative">
+                <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-gray-400">
+                  <i class="fas fa-cut text-sm"></i>
+                </span>
+                <select id="serviceSelect" required class="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 focus:border-brand-plum focus:ring-2 focus:ring-pink-200 outline-none text-sm bg-white transition appearance-none cursor-pointer">
+                  <option value="" disabled selected>Choose from flyer list...</option>
+                  <option value="Frontal Installation">Frontal Installation</option>
+                  <option value="Nails">Nails (Acrylic / Polygel / Tips)</option>
+                  <option value="Braids">Braids (Knotless / Stitch / Boho)</option>
+                  <option value="Revamping">Revamping (Deep Conditioning & Restyle)</option>
+                  <option value="Wiging">Wiging (Custom Wig Construction)</option>
+                  <option value="Hair Accessories">Hair Accessories Purchase</option>
+                  <option value="Training">Hair / Nail Training Course</option>
+                </select>
+                <span class="absolute inset-y-0 right-0 pr-3.5 flex items-center pointer-events-none text-gray-400">
+                  <i class="fas fa-chevron-down text-xs"></i>
+                </span>
+              </div>
             </div>
-            <div class="field">
-              <label for="appointmentDate">Preferred date</label>
-              <input id="appointmentDate" name="date" type="date" required>
+
+            <!-- Preferred WhatsApp Line to Reach CEO -->
+            <div>
+              <label class="block text-xs font-semibold text-gray-700 uppercase tracking-wider mb-2">
+                Send Booking To CEO On:
+              </label>
+              <div class="relative">
+                <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-emerald-500">
+                  <i class="fab fa-whatsapp text-sm"></i>
+                </span>
+                <select id="ceoLineSelect" class="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 focus:border-brand-plum focus:ring-2 focus:ring-pink-200 outline-none text-sm bg-white transition appearance-none cursor-pointer">
+                  <option value="2347016286488">WhatsApp Line 1 (07016286488)</option>
+                  <option value="2348152047702">WhatsApp Line 2 (08152047702)</option>
+                </select>
+                <span class="absolute inset-y-0 right-0 pr-3.5 flex items-center pointer-events-none text-gray-400">
+                  <i class="fas fa-chevron-down text-xs"></i>
+                </span>
+              </div>
             </div>
-            <div class="field full">
-              <label for="bookingNotes">Anything else we should know? <span style="font-weight:400;color:#8a7b8c">(optional)</span></label>
-              <textarea id="bookingNotes" name="notes" placeholder="Share your preferred style, length, or any questions..."></textarea>
+
+            <!-- Preferred Date -->
+            <div>
+              <label class="block text-xs font-semibold text-gray-700 uppercase tracking-wider mb-2">
+                Preferred Date <span class="text-red-500">*</span>
+              </label>
+              <div class="relative">
+                <input type="date" id="appointmentDate" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-brand-plum focus:ring-2 focus:ring-pink-200 outline-none text-sm transition">
+              </div>
+            </div>
+
+            <!-- Preferred Time -->
+            <div>
+              <label class="block text-xs font-semibold text-gray-700 uppercase tracking-wider mb-2">
+                Preferred Time
+              </label>
+              <div class="relative">
+                <select id="appointmentTime" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-brand-plum focus:ring-2 focus:ring-pink-200 outline-none text-sm bg-white transition cursor-pointer">
+                  <option value="09:00 AM">Morning: 09:00 AM</option>
+                  <option value="11:30 AM">Late Morning: 11:30 AM</option>
+                  <option value="02:00 PM">Afternoon: 02:00 PM</option>
+                  <option value="04:30 PM">Evening: 04:30 PM</option>
+                  <option value="Flexible">I'm Flexible</option>
+                </select>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Notes / Style Description -->
+          <div>
+            <label class="block text-xs font-semibold text-gray-700 uppercase tracking-wider mb-2">
+              Additional Details or Style Request (Optional)
+            </label>
+            <textarea id="clientNotes" rows="3" placeholder="Tell us hair length, lace type, nail inspiration or if you are bringing your hair..." class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-brand-plum focus:ring-2 focus:ring-pink-200 outline-none text-sm transition"></textarea>
+          </div>
+
+          <!-- Studio Notice -->
+          <div class="p-3 bg-pink-50 rounded-xl border border-pink-200 text-xs text-brand-dark flex items-center gap-3">
+            <i class="fas fa-map-marker-alt text-brand-plum text-base"></i>
+            <div>
+              <strong>Studio Location:</strong> 34-36, Igbeba Road, Ijebu-Ode, Ogun State.
             </div>
           </div>
-          <button class="button" type="submit">Send booking request on WhatsApp <span aria-hidden="true">↗</span></button>
-          <p class="form-note">Your message will be sent to Hair by Esther. Appointment time is confirmed in chat.</p>
-          <div class="form-message" id="formMessage" role="status" aria-live="polite"></div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="w-full py-4 bg-brand-plum hover:bg-brand-dark text-white font-bold rounded-xl shadow-lg shadow-pink-900/20 hover:shadow-xl transition duration-300 flex items-center justify-center gap-2 text-sm sm:text-base">
+            <i class="fab fa-whatsapp text-xl text-emerald-400"></i>
+            <span>Confirm & Send Booking to WhatsApp</span>
+          </button>
         </form>
-      </div>
-    </section>
 
-    <section class="contact-section" id="contact">
-      <div class="container contact-grid">
-        <div class="contact-panel">
-          <div class="eyebrow"><span class="spark">✦</span> Say hello</div>
-          <h2>We’d love to hear from you.</h2>
-          <p>Questions, bookings or beauty talk—reach Esther directly on WhatsApp or come visit us in Ijebu.</p>
-          <div class="contact-list">
-            <a class="contact-item" href="https://wa.me/2347016286488" target="_blank" rel="noopener noreferrer">
-              <span class="contact-icon" aria-hidden="true">☏</span>
-              <span><small>WhatsApp the CEO</small><strong>07016286488</strong></span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- LOCATION & VISIT US SECTION -->
+  <section id="location" class="py-16 bg-white border-t border-pink-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        
+        <div class="lg:col-span-5 space-y-6">
+          <span class="text-xs font-bold uppercase tracking-widest text-brand-plum bg-pink-100 px-3 py-1 rounded-full">
+            Find Our Studio
+          </span>
+          <h2 class="font-serif-title text-3xl sm:text-4xl font-extrabold text-gray-900">
+            Visit HairbyEsther Studio in Ijebu-Ode
+          </h2>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            We are conveniently located along Igbeba Road, offering a comfortable, air-conditioned, luxury salon environment with professional hospitality.
+          </p>
+
+          <div class="space-y-4 pt-2">
+            <div class="flex items-start gap-3.5">
+              <div class="w-10 h-10 rounded-xl bg-pink-100 text-brand-plum flex items-center justify-center flex-shrink-0 mt-0.5">
+                <i class="fas fa-map-marker-alt text-lg"></i>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-gray-900">Studio Address</h4>
+                <p class="text-xs sm:text-sm text-gray-600">34-36, Igbeba Road, Ijebu-Ode, Ogun State, Nigeria</p>
+                <p class="text-[11px] text-brand-plum mt-0.5 font-medium">Landmark: Along Igbeba main road corridor</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3.5">
+              <div class="w-10 h-10 rounded-xl bg-pink-100 text-brand-plum flex items-center justify-center flex-shrink-0 mt-0.5">
+                <i class="fas fa-clock text-lg"></i>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-gray-900">Working Hours</h4>
+                <p class="text-xs sm:text-sm text-gray-600">Monday – Saturday: 9:00 AM – 7:00 PM</p>
+                <p class="text-xs sm:text-sm text-gray-600">Sundays: By Special Booking / Appointment Only</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3.5">
+              <div class="w-10 h-10 rounded-xl bg-pink-100 text-brand-plum flex items-center justify-center flex-shrink-0 mt-0.5">
+                <i class="fas fa-phone-volume text-lg"></i>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-gray-900">CEO Direct Hotlines</h4>
+                <p class="text-xs sm:text-sm text-gray-700">Line 1: <strong>07016286488</strong></p>
+                <p class="text-xs sm:text-sm text-gray-700">Line 2: <strong>08152047702</strong></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-2 flex flex-wrap gap-3">
+            <a href="https://maps.google.com/?q=Igbeba+Road+Ijebu+Ode+Ogun+State" target="_blank" class="px-5 py-2.5 bg-gray-900 hover:bg-black text-white text-xs font-semibold rounded-xl transition flex items-center gap-2">
+              <i class="fas fa-directions"></i> Get Google Directions
             </a>
-            <a class="contact-item" href="https://wa.me/2348152047702" target="_blank" rel="noopener noreferrer">
-              <span class="contact-icon" aria-hidden="true">☏</span>
-              <span><small>WhatsApp the CEO</small><strong>08152047702</strong></span>
+            <a href="tel:07016286488" class="px-5 py-2.5 bg-brand-plum hover:bg-brand-dark text-white text-xs font-semibold rounded-xl transition flex items-center gap-2">
+              <i class="fas fa-phone-alt"></i> Call Studio Hotline
             </a>
-            <div class="contact-item">
-              <span class="contact-icon" aria-hidden="true">⌖</span>
-              <span><small>Visit us</small><strong>34-36 Igbabe Road, Ijebu, Ogun State</strong></span>
+          </div>
+        </div>
+
+        <!-- Visual Map Representation Card -->
+        <div class="lg:col-span-7">
+          <div class="bg-gradient-to-tr from-pink-100 via-pink-50 to-white p-4 rounded-3xl border border-pink-200 shadow-xl">
+            <div class="rounded-2xl overflow-hidden shadow-inner border border-pink-100 relative h-80 sm:h-96 bg-gray-200">
+              
+              <!-- Clean Stylized Map Mockup with Real Pin -->
+              <iframe 
+                title="HairbyEsther Location Map"
+                class="w-full h-full border-0"
+                src="https://maps.google.com/maps?q=Igbeba%20Road,%20Ijebu-Ode,%20Ogun%20State,%20Nigeria&t=&z=14&ie=UTF8&iwloc=&output=embed"
+                loading="lazy">
+              </iframe>
+
+              <!-- Map Overlay Card -->
+              <div class="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md p-3.5 rounded-xl border border-pink-200 shadow-lg flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                  <div class="w-8 h-8 rounded-full bg-brand-plum text-white flex items-center justify-center text-xs">
+                    <i class="fas fa-store"></i>
+                  </div>
+                  <div>
+                    <h5 class="text-xs font-bold text-gray-900">HairbyEsther Studio</h5>
+                    <p class="text-[11px] text-gray-600">34-36, Igbeba Road, Ijebu-Ode</p>
+                  </div>
+                </div>
+                <a href="https://wa.me/2347016286488?text=Hello%20CEO%20Esther,%20I'm%20on%20my%20way%20to%20the%20studio" target="_blank" class="px-3 py-1.5 bg-emerald-600 text-white text-[11px] rounded-lg font-semibold hover:bg-emerald-700 transition">
+                  Notify Arrival
+                </a>
+              </div>
             </div>
           </div>
         </div>
-        <div class="map-card" aria-label="Location information for Hair by Esther">
-          <div class="map-pin" aria-hidden="true"><span>⌖</span></div>
-          <h3>Find your way to us</h3>
-          <p>34-36 Igbabe Road<br>Ijebu, Ogun State</p>
-          <a class="button" href="https://www.google.com/maps/search/?api=1&query=34-36+Igbabe+Road+Ijebu+Ogun+State" target="_blank" rel="noopener noreferrer">Open directions <span aria-hidden="true">↗</span></a>
-        </div>
-      </div>
-    </section>
-  </main>
 
-  <footer>
-    <div class="container footer-inner">
-      <a class="footer-brand" href="#home">Hair <span>by</span> Esther</a>
-      <p>© <span id="year"></span> Hair by Esther. Made with love & a little sparkle.</p>
-      <a class="back-top" href="#home" aria-label="Back to top">↑</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOCIAL COMMUNITY PROOF -->
+  <section class="py-12 bg-pink-50/60 border-t border-pink-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h3 class="font-serif-title text-2xl font-bold text-gray-900 mb-2">Connect With CEO Esther Online</h3>
+      <p class="text-gray-600 text-xs sm:text-sm max-w-xl mx-auto mb-6">
+        Follow daily transformations, hair revamping tutorials, client reviews, and flash promos on Instagram and TikTok.
+      </p>
+
+      <div class="flex flex-wrap justify-center items-center gap-4">
+        <a href="https://instagram.com" target="_blank" class="flex items-center gap-3 px-6 py-3 bg-white rounded-2xl border border-pink-200 hover:border-pink-400 shadow-sm hover:shadow transition group">
+          <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-amber-500 via-rose-500 to-purple-600 text-white flex items-center justify-center text-lg">
+            <i class="fab fa-instagram"></i>
+          </div>
+          <div class="text-left">
+            <p class="text-[10px] text-gray-400 uppercase font-semibold">Instagram</p>
+            <p class="text-xs font-bold text-gray-900 group-hover:text-brand-plum">Hair by Esther</p>
+          </div>
+        </a>
+
+        <a href="https://tiktok.com" target="_blank" class="flex items-center gap-3 px-6 py-3 bg-white rounded-2xl border border-pink-200 hover:border-pink-400 shadow-sm hover:shadow transition group">
+          <div class="w-9 h-9 rounded-xl bg-black text-white flex items-center justify-center text-lg">
+            <i class="fab fa-tiktok"></i>
+          </div>
+          <div class="text-left">
+            <p class="text-[10px] text-gray-400 uppercase font-semibold">TikTok Handle</p>
+            <p class="text-xs font-bold text-gray-900 group-hover:text-brand-plum">@Estherstyledme</p>
+          </div>
+        </a>
+
+        <a href="https://wa.me/2347016286488" target="_blank" class="flex items-center gap-3 px-6 py-3 bg-white rounded-2xl border border-pink-200 hover:border-pink-400 shadow-sm hover:shadow transition group">
+          <div class="w-9 h-9 rounded-xl bg-emerald-500 text-white flex items-center justify-center text-lg">
+            <i class="fab fa-whatsapp"></i>
+          </div>
+          <div class="text-left">
+            <p class="text-[10px] text-gray-400 uppercase font-semibold">WhatsApp CEO 1</p>
+            <p class="text-xs font-bold text-gray-900 group-hover:text-emerald-600">07016286488</p>
+          </div>
+        </a>
+
+        <a href="https://wa.me/2348152047702" target="_blank" class="flex items-center gap-3 px-6 py-3 bg-white rounded-2xl border border-pink-200 hover:border-pink-400 shadow-sm hover:shadow transition group">
+          <div class="w-9 h-9 rounded-xl bg-emerald-500 text-white flex items-center justify-center text-lg">
+            <i class="fab fa-whatsapp"></i>
+          </div>
+          <div class="text-left">
+            <p class="text-[10px] text-gray-400 uppercase font-semibold">WhatsApp CEO 2</p>
+            <p class="text-xs font-bold text-gray-900 group-hover:text-emerald-600">08152047702</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-brand-dark text-pink-100 pt-16 pb-8 border-t border-pink-900/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+        
+        <!-- Brand Info -->
+        <div class="space-y-4">
+          <div class="flex items-center gap-2.5">
+            <div class="w-10 h-10 rounded-full bg-pink-500/20 text-pink-300 flex items-center justify-center text-lg border border-pink-400/30">
+              <i class="fas fa-spa"></i>
+            </div>
+            <span class="font-serif-title text-2xl font-bold text-white tracking-tight">HairbyEsther</span>
+          </div>
+          <p class="text-xs sm:text-sm text-pink-200/80 leading-relaxed italic">
+            "Offering the best beauty services"
+          </p>
+          <p class="text-xs text-pink-200/70">
+            Specializing in high-end frontal installations, braid craftsmanship, customized nail designs, wig revamping, wig manufacturing, and accredited salon training.
+          </p>
+        </div>
+
+        <!-- Services Links -->
+        <div>
+          <h4 class="text-white text-xs font-bold uppercase tracking-wider mb-4 border-b border-pink-800 pb-2">
+            Services List
+          </h4>
+          <ul class="space-y-2 text-xs text-pink-200/80">
+            <li><a href="#services" class="hover:text-white transition flex items-center gap-1.5"><i class="fas fa-chevron-right text-[9px] text-pink-400"></i> Frontal Installation</a></li>
+            <li><a href="#services" class="hover:text-white transition flex items-center gap-1.5"><i class="fas fa-chevron-right text-[9px] text-pink-400"></i> Nails (Acrylic & Gel)</a></li>
+            <li><a href="#services" class="hover:text-white transition flex items-center gap-1.5"><i class="fas fa-chevron-right text-[9px] text-pink-400"></i> Braids & Cornrows</a></li>
+            <li><a href="#services" class="hover:text-white transition flex items-center gap-1.5"><i class="fas fa-chevron-right text-[9px] text-pink-400"></i> Wig Revamping</a></li>
+            <li><a href="#services" class="hover:text-white transition flex items-center gap-1.5"><i class="fas fa-chevron-right text-[9px] text-pink-400"></i> Wig Making (Wiging)</a></li>
+            <li><a href="#services" class="hover:text-white transition flex items-center gap-1.5"><i class="fas fa-chevron-right text-[9px] text-pink-400"></i> Hair Accessories</a></li>
+            <li><a href="#training" class="hover:text-white transition flex items-center gap-1.5"><i class="fas fa-chevron-right text-[9px] text-pink-400"></i> Apprenticeship & Training</a></li>
+          </ul>
+        </div>
+
+        <!-- Quick Contacts -->
+        <div>
+          <h4 class="text-white text-xs font-bold uppercase tracking-wider mb-4 border-b border-pink-800 pb-2">
+            Reach The CEO
+          </h4>
+          <ul class="space-y-3 text-xs text-pink-200/80">
+            <li class="flex items-center gap-2">
+              <i class="fab fa-whatsapp text-emerald-400 text-sm"></i>
+              <a href="https://wa.me/2347016286488" target="_blank" class="hover:text-white transition">Line 1: 07016286488</a>
+            </li>
+            <li class="flex items-center gap-2">
+              <i class="fab fa-whatsapp text-emerald-400 text-sm"></i>
+              <a href="https://wa.me/2348152047702" target="_blank" class="hover:text-white transition">Line 2: 08152047702</a>
+            </li>
+            <li class="flex items-center gap-2">
+              <i class="fas fa-phone text-amber-400 text-xs"></i>
+              <a href="tel:07016286488" class="hover:text-white transition">Direct Phone: 07016286488</a>
+            </li>
+            <li class="flex items-center gap-2">
+              <i class="fab fa-instagram text-pink-400 text-sm"></i>
+              <span>Instagram: Hair by Esther</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <i class="fab fa-tiktok text-white text-xs"></i>
+              <span>TikTok: Estherstyledme</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Location Box -->
+        <div>
+          <h4 class="text-white text-xs font-bold uppercase tracking-wider mb-4 border-b border-pink-800 pb-2">
+            Studio Address
+          </h4>
+          <p class="text-xs text-pink-200/90 leading-relaxed mb-3">
+            <i class="fas fa-map-marker-alt text-brand-500 mr-1.5"></i>
+            34-36, Igbeba Road, Ijebu-Ode, Ogun State, Nigeria.
+          </p>
+          <div class="p-3 rounded-xl bg-pink-950/70 border border-pink-800/40 text-[11px] text-pink-300">
+            Opening Hours: Mon - Sat: 9:00 AM - 7:00 PM. Bookings outside normal hours available on request.
+          </div>
+          <div class="mt-4">
+            <button onclick="openModal('https://www.designarena.ai/u/c2182f9c-79f3-424f-82b7-223fc8d6e225')" class="text-xs text-pink-300 hover:text-white underline">
+              View Original Flyer Asset &rarr;
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Copyright bar -->
+      <div class="pt-8 border-t border-pink-900/40 text-center text-xs text-pink-300/60 flex flex-col sm:flex-row justify-between items-center gap-3">
+        <p>&copy; <span id="currentYear"></span> HairbyEsther. All rights reserved.</p>
+        <p class="text-[11px]">Ijebu-Ode, Ogun State, Nigeria • Offering the best beauty services</p>
+      </div>
+
     </div>
   </footer>
 
+  <!-- FLOATING QUICK WHATSAPP REACH BUTTON FOR MOBILE -->
+  <div class="fixed bottom-6 right-5 z-50 flex flex-col items-end gap-2">
+    <!-- Popout menu toggle -->
+    <div id="floatingOptions" class="hidden flex-col items-end gap-2 mb-1">
+      <a href="https://wa.me/2347016286488?text=Hello%20CEO%20Esther,%20I%20would%20like%20to%20book%20a%20hair%20appointment" target="_blank" class="flex items-center gap-2 bg-white text-gray-800 px-3.5 py-2 rounded-full shadow-lg border border-pink-200 text-xs font-semibold hover:bg-pink-50 transition">
+        <span>Chat Line 1 (07016286488)</span>
+        <span class="w-6 h-6 rounded-full bg-emerald-500 text-white flex items-center justify-center text-xs"><i class="fab fa-whatsapp"></i></span>
+      </a>
+      <a href="https://wa.me/2348152047702?text=Hello%20CEO%20Esther,%20I'm%20reaching%20out%20from%20your%20website" target="_blank" class="flex items-center gap-2 bg-white text-gray-800 px-3.5 py-2 rounded-full shadow-lg border border-pink-200 text-xs font-semibold hover:bg-pink-50 transition">
+        <span>Chat Line 2 (08152047702)</span>
+        <span class="w-6 h-6 rounded-full bg-emerald-500 text-white flex items-center justify-center text-xs"><i class="fab fa-whatsapp"></i></span>
+      </a>
+    </div>
+
+    <button onclick="toggleFloatingOptions()" class="bg-emerald-500 hover:bg-emerald-600 text-white p-3.5 sm:px-5 sm:py-3.5 rounded-full shadow-2xl flex items-center gap-2 text-sm font-bold pulse-ring transition-transform active:scale-95" aria-label="Quick WhatsApp Contact">
+      <i class="fab fa-whatsapp text-2xl"></i>
+      <span class="hidden sm:inline">Chat CEO</span>
+    </button>
+  </div>
+
+  <!-- IMAGE LIGHTBOX / MODAL -->
+  <div id="imageModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div class="relative max-w-4xl max-h-[90vh] bg-white rounded-2xl overflow-hidden shadow-2xl p-2 flex flex-col">
+      <button onclick="closeModal()" class="absolute top-4 right-4 z-10 w-9 h-9 bg-black/60 hover:bg-black text-white rounded-full flex items-center justify-center transition">
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="overflow-auto flex-1 p-2 flex items-center justify-center">
+        <img id="modalImg" src="" alt="HairbyEsther Full View" class="max-h-[82vh] w-auto rounded-lg object-contain">
+      </div>
+      <div class="p-3 bg-pink-50 rounded-b-xl border-t border-pink-200 flex flex-wrap justify-between items-center text-xs gap-2">
+        <span class="font-bold text-brand-dark">HairbyEsther Official Poster Board</span>
+        <div class="flex gap-2">
+          <a href="https://wa.me/2347016286488" target="_blank" class="px-3 py-1.5 bg-emerald-600 text-white rounded-md font-semibold">Contact 07016286488</a>
+          <a href="https://wa.me/2348152047702" target="_blank" class="px-3 py-1.5 bg-brand-plum text-white rounded-md font-semibold">Contact 08152047702</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT LOGIC -->
   <script>
-    (() => {
-      const menuButton = document.querySelector(".menu-toggle");
-      const nav = document.querySelector(".nav-links");
+    // Set Dynamic Year
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
 
-      menuButton.addEventListener("click", () => {
-        const isOpen = nav.classList.toggle("open");
-        menuButton.setAttribute("aria-expanded", String(isOpen));
-        menuButton.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
-        menuButton.textContent = isOpen ? "×" : "☰";
+    // Mobile Navigation Toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Close mobile nav when clicking a link
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+
+    // Toggle Floating WhatsApp options
+    function toggleFloatingOptions() {
+      const options = document.getElementById('floatingOptions');
+      options.classList.toggle('hidden');
+      options.classList.toggle('flex');
+    }
+
+    // Modal logic for Flyer
+    function openModal(imgSrc) {
+      document.getElementById('modalImg').src = imgSrc;
+      const modal = document.getElementById('imageModal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('imageModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      document.body.style.overflow = 'auto';
+    }
+
+    document.getElementById('imageModal').addEventListener('click', function(e) {
+      if (e.target === this) {
+        closeModal();
+      }
+    });
+
+    // Quick select from Service cards to booking form
+    function selectServiceForBooking(serviceName) {
+      const select = document.getElementById('serviceSelect');
+      select.value = serviceName;
+      // Scroll to booking form
+      const bookingSection = document.getElementById('booking');
+      bookingSection.scrollIntoView({ behavior: 'smooth' });
+      // Visual feedback
+      select.focus();
+      select.classList.add('ring-4', 'ring-pink-300');
+      setTimeout(() => {
+        select.classList.remove('ring-4', 'ring-pink-300');
+      }, 1500);
+    }
+
+    // Gallery Filter Logic
+    function filterGallery(category) {
+      const items = document.querySelectorAll('.gallery-item');
+      const buttons = document.querySelectorAll('#galleryFilters .filter-btn');
+
+      buttons.forEach(btn => {
+        btn.classList.remove('bg-brand-plum', 'text-white', 'active');
+        btn.classList.add('bg-pink-100', 'text-gray-700');
       });
 
-      nav.querySelectorAll("a").forEach(link => {
-        link.addEventListener("click", () => {
-          nav.classList.remove("open");
-          menuButton.setAttribute("aria-expanded", "false");
-          menuButton.setAttribute("aria-label", "Open navigation");
-          menuButton.textContent = "☰";
-        });
+      // Highlight clicked button
+      event.target.classList.add('bg-brand-plum', 'text-white', 'active');
+      event.target.classList.remove('bg-pink-100', 'text-gray-700');
+
+      items.forEach(item => {
+        if (category === 'all' || item.classList.contains(category)) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
       });
+    }
 
-      const dateField = document.getElementById("appointmentDate");
-      const today = new Date();
-      const localToday = new Date(today.getTime() - today.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
-      dateField.min = localToday;
+    // Booking Submission: Prepares formatted WhatsApp link to reach the CEO
+    function handleBookingSubmit(e) {
+      e.preventDefault();
 
-      document.querySelectorAll(".book-service").forEach(link => {
-        link.addEventListener("click", () => {
-          document.getElementById("serviceSelect").value = link.dataset.service;
-        });
-      });
+      const name = document.getElementById('clientName').value.trim();
+      const phone = document.getElementById('clientPhone').value.trim();
+      const service = document.getElementById('serviceSelect').value;
+      const ceoLine = document.getElementById('ceoLineSelect').value;
+      const date = document.getElementById('appointmentDate').value;
+      const time = document.getElementById('appointmentTime').value;
+      const notes = document.getElementById('clientNotes').value.trim();
 
-      const form = document.getElementById("bookingForm");
-      const message = document.getElementById("formMessage");
+      // Format WhatsApp Message
+      let message = `*NEW BOOKING INQUIRY - HAIRBYESTHER*%0A%0A`;
+      message += `👤 *Client Name:* ${encodeURIComponent(name)}%0A`;
+      message += `📞 *Client Phone:* ${encodeURIComponent(phone)}%0A`;
+      message += `✨ *Requested Service:* ${encodeURIComponent(service)}%0A`;
+      message += `📅 *Date:* ${encodeURIComponent(date)}%0A`;
+      message += `⏰ *Time:* ${encodeURIComponent(time)}%0A`;
+      message += `📍 *Studio:* 34-36, Igbeba Road, Ijebu-Ode, Ogun State%0A`;
+      
+      if (notes) {
+        message += `📝 *Notes/Style Details:* ${encodeURIComponent(notes)}%0A`;
+      }
+      
+      message += `%0A_Sent via HairbyEsther Online Outreach Portal_`;
 
-      form.addEventListener("submit", event => {
-        event.preventDefault();
-        message.className = "form-message";
-        if (!form.reportValidity()) return;
+      const whatsappUrl = `https://wa.me/${ceoLine}?text=${message}`;
 
-        const data = new FormData(form);
-        const bookingDate = new Date(data.get("date") + "T12:00:00");
-        const prettyDate = bookingDate.toLocaleDateString("en-NG", {
-          weekday: "long", day: "numeric", month: "long", year: "numeric"
-        });
-        const text = [
-          "Hello Hair by Esther! I'd like to request an appointment.",
-          "",
-          `Name: ${data.get("name")}`,
-          `Phone: ${data.get("phone")}`,
-          `Service: ${data.get("service")}`,
-          `Preferred date: ${prettyDate}`,
-          data.get("notes") ? `Notes: ${data.get("notes")}` : "",
-          "",
-          "Please let me know what times are available. Thank you!"
-        ].filter(Boolean).join("\n");
+      // Show friendly confirmation before redirect
+      const confirmSend = confirm(`Thank you, ${name}! We will now open WhatsApp to connect directly with CEO Esther on ${ceoLine === '2347016286488' ? '07016286488' : '08152047702'}. Click OK to proceed.`);
+      
+      if (confirmSend) {
+        window.open(whatsappUrl, '_blank');
+      }
+    }
 
-        message.textContent = "Opening WhatsApp with your appointment request…";
-        message.className = "form-message success";
-        const whatsappUrl = "https://wa.me/2347016286488?text=" + encodeURIComponent(text);
-        window.open(whatsappUrl, "_blank", "noopener,noreferrer");
-      });
-
-      document.getElementById("year").textContent = new Date().getFullYear();
-    })();
+    // Set today as minimum selectable date for booking
+    const today = new Date().toISOString().split('T')[0];
+    document.getElementById('appointmentDate').setAttribute('min', today);
   </script>
+
 </body>
 </html>
